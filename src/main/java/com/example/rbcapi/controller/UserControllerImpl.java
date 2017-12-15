@@ -71,7 +71,7 @@ public class UserControllerImpl implements UserController {
      * @param userDetailsDTO details of the user to update
      */
     @Override
-    @PutMapping("/notes/{id}")
+    @PutMapping("/users/{id}")
     public ResponseEntity<UserDTO> updateUser(@PathVariable(value = "id") Long userId, @Valid @RequestBody UserDTO userDetailsDTO) {
         User user = userService.getUser(userId);
 
@@ -91,7 +91,7 @@ public class UserControllerImpl implements UserController {
      * @param userId user's id to delete
      */
     @Override
-    @DeleteMapping("/notes/{id}")
+    @DeleteMapping("/users/{id}")
     public ResponseEntity<UserDTO> deleteUser(@PathVariable(value = "id") Long userId) {
         User user = userService.getUser(userId);
         if (user == null) {
